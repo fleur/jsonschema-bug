@@ -1,0 +1,20 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "container",
+    "description": "JSON schema for container",
+    "type": "object",
+    "allOf": [ { "$ref": "file:schema/generic.json" } ],
+    "properties": {
+        "type":     { "type": "string" },
+        "children": {
+            "type": "array",
+            "minItems": 0,
+            "uniqueItems": true,
+            "items": {
+                "oneOf": [ 
+                    { "$ref": "file:generic.json" }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "project",
+    "description": "JSON schema for project",
+    "type": "object",
+    "allOf": [ { "$ref": "file:schemas/container.json" } ],
+    "properties": {
+        "type":     { "type": "string", "pattern": "^project$" },
+        "children": {
+            "type": "array",
+            "minItems": 0,
+            "uniqueItems": true,
+            "items": {
+                "oneOf": [
+                    { "$ref": "file:sequence.json" },
+                    { "$ref": "file:season.json" }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "generic",
+    "description": "JSON schema for generic",
+    "type": "object",
+    "properties": {
+        "type":          { "type": "string" },
+        "name":          { "type": "string" },
+        "description":   { "type": "string" },
+        "thumbnail_url": { "type": "string", "format": "uri" },
+        "created_by":    { "type": "integer" },
+        "updated_by":    { "type": "integer" }
+    },
+    "required": ["type", "name", "created_by"]
+}
